@@ -23,6 +23,16 @@ resource "aws_lb_target_group" "tier-n-target-was" {
     "Name" = "tier-n-target-was"
   }
 }
+
+resource "aws_lb_listener" "tier-n-listner-was" {
+  load_balancer_arn = aws_lb.tier-nlb-was.arn
+  port              = "8080"
+  protocol          = "TCP"
+  default_action {
+    type             = "forward"
+    target_group_arn = aws_lb_target_group.tier-n-target-was.arn
+  }
+}
 #NLB Attachement 생성
 resource "aws_lb_target_group_attachment" "tier-n-attache-was1" {
   target_group_arn = aws_lb_target_group.tier-n-target-was.arn
