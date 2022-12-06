@@ -24,7 +24,4 @@ resource "aws_security_group" "tier-sg-pri-web" {
   tags = {
     "Name" = "tier-sg-pri-web"
   }
-  output "name" {
-    value = ""
-  }
 }
