@@ -1,0 +1,16 @@
+# 확장자가 .txt 인 파일 무시
+*.txt
+
+#.terraform 으로 시작하는파일 무시
+*.terraform
+
+#.terraform 폴더 푸시
+.terraform/
+
+key/
+
+# 확장자 hcl,info 무시
+
+*.hcl
+*.info
+*.backup
